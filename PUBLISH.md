@@ -1,17 +1,17 @@
-# Publish to GitHub
+# GitHub publication
 
-The project is committed locally. GitHub CLI is installed in the development
-environment, but its injected `GH_TOKEN` failed authentication, so no remote
-repository has been created or overwritten.
+This project is published at:
+https://github.com/shreshy28/deep-learning-nueral-network
 
-Run the following on your own authenticated machine, from this project directory:
+The existing empty repository was selected by the owner. Publication uses the
+platform's authenticated HTTPS Git route; GitHub CLI authentication is separate
+and is not required for pushes through that route.
+
+From this checkout, publish future committed changes with:
 
 ```bash
-gh auth login --hostname github.com
-gh auth status
-gh repo create neural-network-from-scratch --public --source=. --remote=origin --push
+git push origin main
 ```
 
-`gh repo create` fails if the repository already exists; do not force-push or
-overwrite it. If a stale `GH_TOKEN` is set in your own shell, unset it before
-interactive login. Do not paste credentials into source files or commits.
+Datasets, virtual environments, and model checkpoint files are excluded by
+`.gitignore`. Never commit credentials or force-push over unrelated work.
